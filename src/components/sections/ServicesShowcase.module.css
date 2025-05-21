@@ -1,0 +1,97 @@
+.servicesSection {
+  padding: var(--space-16) 0;
+  background-color: var(--background-secondary); /* Slightly different bg from primary for section distinction */
+}
+
+.servicesContainer {
+  /* Standard container width is applied via global .container class */
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.sectionSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on smallest screens */
+  gap: var(--space-8);
+}
+
+/* Responsive grid: 2 columns on small screens, 3 or 4 on larger */
+@media (min-width: 640px) { /* sm breakpoint */
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+  .servicesGrid {
+    grid-template-columns: repeat(2, 1fr); /* Sticking to 2 for better readability with more text */
+    /* If cards are more visual and less text, can go to 3 or 4: */
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  }
+}
+
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* Override card default if it was centered */
+  /* height: 100%; Ensures cards in a row are same height if content varies */
+}
+
+.serviceIconWrapper {
+  margin-bottom: var(--space-4);
+  display: inline-block; /* To allow background and padding */
+  background-color: rgba(var(--color-accent-blue-rgb, 99, 179, 237), 0.1); /* Accent bg for icon */
+  border-radius: var(--border-radius-md);
+  padding: var(--space-3);
+  width: fit-content;
+}
+
+.serviceIcon {
+  font-size: var(--font-size-2xl); /* Adjust icon size */
+  color: var(--text-accent);
+  display: block;
+}
+
+.serviceTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.serviceDescription {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex-grow: 1; /* Allows description to take up space pushing button down if used */
+  margin-bottom: var(--space-4); /* Space before a potential button inside the card */
+}
+
+/* Styles for an optional "Learn More" button/link inside the card */
+.serviceLinkWrapper {
+  margin-top: auto; /* Pushes link to the bottom of the card */
+  padding-top: var(--space-4);
+}
+
+.viewAllServicesCta {
+  text-align: center;
+  margin-top: var(--space-12);
+} 

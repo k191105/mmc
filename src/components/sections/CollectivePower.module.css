@@ -1,0 +1,163 @@
+.solutionSection {
+  padding: var(--space-16) 0;
+  background-color: var(--background-primary);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.sectionSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.modelContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  align-items: center;
+}
+
+@media (min-width: 992px) { /* lg breakpoint */
+  .modelContainer {
+    flex-direction: row;
+    align-items: flex-start; /* Align items to top for varying heights */
+    gap: var(--space-12);
+  }
+}
+
+.modelVisual {
+  flex: 1 1 45%; /* Takes up slightly less space than description */
+  min-height: 300px; /* Ensure some height for placeholder */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: var(--background-card); */ /* If using an actual image, remove/adjust this */
+  border-radius: var(--border-radius-lg);
+  /* border: 1px solid var(--border-color); */
+  padding: var(--space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+.visualPlaceholder {
+  text-align: center;
+  color: var(--text-secondary);
+  border: 2px dashed var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-8) var(--space-6);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  background-color: rgba(var(--color-muted-dark-blue-rgb), 0.3);
+}
+
+.visualPlaceholderText {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.visualIcon {
+  font-size: 3rem;
+  color: var(--text-accent);
+  margin-bottom: var(--space-2);
+}
+
+.tierCirclesContainer {
+  display: flex;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.tierCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  color: var(--text-primary);
+  background-color: var(--tier-color, var(--color-muted-dark-blue)); /* Use CSS var passed inline */
+  box-shadow: var(--shadow-sm);
+}
+
+.modelDescription {
+  flex: 1 1 55%;
+}
+
+.descriptionTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
+  border-left: 4px solid var(--text-accent);
+  padding-left: var(--space-4);
+}
+
+.tier {
+  margin-bottom: var(--space-6);
+  padding: var(--space-5);
+  background-color: var(--background-card);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.tier:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.tierTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tierIconLetter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+  color: var(--text-primary); /* Default, overridden by inline style */
+  /* background-color will be set via inline style in component */
+  flex-shrink: 0;
+}
+
+.tierText {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: calc(32px + var(--space-3)); /* Align with text after icon */
+}
+
+.ctaWrapper {
+  margin-top: var(--space-8);
+  text-align: left; /* Or center if preferred */
+} 

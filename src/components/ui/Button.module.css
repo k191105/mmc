@@ -1,0 +1,119 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-normal);
+  white-space: nowrap;
+  user-select: none; /* Prevent text selection */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-accent-blue);
+  outline-offset: 2px;
+}
+
+.button:disabled,
+.button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.small {
+  font-size: var(--font-size-xs);
+  padding: var(--space-2) var(--space-3);
+}
+
+.medium {
+  font-size: var(--font-size-sm);
+  padding: var(--space-3) var(--space-4);
+}
+
+.large {
+  font-size: var(--font-size-base);
+  padding: var(--space-4) var(--space-6);
+}
+
+/* Primary Variant */
+.primary {
+  background-color: var(--color-accent-blue);
+  color: var(--color-black);
+  border-color: var(--color-accent-blue);
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  box-shadow: var(--shadow-md);
+}
+
+/* Secondary Variant */
+.secondary {
+  background-color: var(--color-muted-dark-blue);
+  color: var(--text-primary);
+  border-color: var(--color-muted-dark-blue);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--color-steel-blue);
+  border-color: var(--color-steel-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Outline Variant */
+.outline {
+  background-color: transparent;
+  color: var(--text-accent);
+  border-color: var(--text-accent);
+}
+
+.outline:hover:not(:disabled) {
+  background-color: rgba(var(--color-accent-blue-rgb, 99, 179, 237), 0.1); /* Use RGB for alpha if var not available */
+  color: var(--text-accent-hover);
+  border-color: var(--text-accent-hover);
+}
+
+/* Text Variant (Link-like) */
+.text {
+  background-color: transparent;
+  color: var(--text-accent);
+  border-color: transparent;
+  padding-left: var(--space-1);
+  padding-right: var(--space-1);
+}
+
+.text:hover:not(:disabled) {
+  color: var(--text-accent-hover);
+  background-color: rgba(var(--color-accent-blue-rgb), 0.1); /* Subtle hover background */
+}
+
+/* Icon Handling */
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.iconWrapper svg {
+  width: 1em; /* Relative to font size */
+  height: 1em;
+}
+
+/* Adjust spacing if icons are present */
+.iconWrapper:first-child:not(:last-child) { /* Left icon */
+  margin-right: var(--space-2);
+}
+
+.iconWrapper:last-child:not(:first-child) { /* Right icon */
+  margin-left: var(--space-2);
+}
+
+.fullWidth {
+  width: 100%;
+} 

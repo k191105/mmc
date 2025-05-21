@@ -1,0 +1,270 @@
+.heroSection {
+  background: linear-gradient(135deg, var(--color-dark-blue) 0%, var(--color-black) 100%);
+  padding: var(--space-20) 0; /* Adjusted padding */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 85vh; /* Adjusted height */
+  color: var(--text-primary);
+}
+
+/* Background decorative shapes - can remain similar, adjust opacity/position if needed */
+.backgroundElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.bgShape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.04; /* Slightly more subtle */
+  animation: subtlePulse 20s infinite alternate ease-in-out;
+}
+
+.shape1 {
+  width: 450px; /* Slightly larger */
+  height: 450px;
+  background: radial-gradient(circle, rgba(var(--color-accent-blue-rgb), 0.25) 0%, transparent 70%);
+  top: 5%;
+  left: 2%;
+  animation-delay: 0s;
+}
+
+.shape2 {
+  width: 350px; /* Slightly larger */
+  height: 350px;
+  background: radial-gradient(circle, rgba(var(--color-steel-blue-rgb, 74, 106, 138), 0.15) 0%, transparent 60%);
+  bottom: 10%;
+  right: 5%;
+  animation-delay: 6s;
+}
+
+.shape3 {
+  width: 250px; /* Slightly larger */
+  height: 250px;
+  background: radial-gradient(circle, rgba(var(--color-pastel-white-rgb), 0.08) 0%, transparent 50%);
+  top: 25%;
+  right: 20%;
+  animation-delay: 12s;
+}
+
+@keyframes subtlePulse {
+  0% { transform: scale(0.95) translate(0,0); opacity: 0.02; }
+  50% { transform: scale(1.05) translate(5px, -5px); opacity: 0.05; } /* Subtler movement */
+  100% { transform: scale(0.95) translate(0,0); opacity: 0.02; }
+}
+
+.heroContainer {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max-width, 1200px); /* Use global max-width */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12); /* Gap between text and visual */
+  width: 100%;
+}
+
+/* Left Column: Text Content */
+.textContent {
+  flex: 1 1 55%; /* Takes up more space */
+  text-align: left; /* Align text to the left */
+  padding-right: var(--space-8); /* Add some padding if visual is close */
+}
+
+.achievementText {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.5px;
+}
+
+.headline {
+  font-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-3xl)); /* Slightly smaller to fit */
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: var(--space-5);
+  text-shadow: 0 1px 10px rgba(var(--color-black-rgb), 0.4);
+}
+
+.highlightText {
+  color: var(--text-accent);
+}
+
+.subheadline {
+  font-size: clamp(var(--font-size-base), 2vw, var(--font-size-md)); /* Slightly smaller */
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: var(--space-8);
+  max-width: 600px; /* Max width for readability */
+  /* Remove margin-left and margin-right auto as it's left-aligned */
+}
+
+.statsContainer {
+  margin-bottom: var(--space-8);
+}
+
+.statsText {
+  font-size: var(--font-size-md);
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+  /* Could add icons or make it more prominent */
+}
+
+.ctaContainer {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically on small screens */
+  align-items: flex-start; /* Align buttons to the start (left) */
+  gap: var(--space-4);
+}
+
+/* Right Column: Visual Element */
+.visualContent {
+  flex: 1 1 40%; /* Takes up less space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* For potential animations or overlays */
+}
+
+.dashboardPreviewPlaceholder {
+  width: 100%;
+  max-width: 480px; /* Control the size of the placeholder */
+  aspect-ratio: 16 / 10; /* Common aspect ratio for dashboards */
+  background-color: rgba(var(--color-black-rgb), 0.2); /* Placeholder bg */
+  border: 1px solid rgba(var(--color-steel-blue-rgb, 74, 106, 138), 0.3);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  box-shadow: 0 10px 30px rgba(var(--color-black-rgb), 0.2);
+  /* Add perspective for potential 3D effect if an image is used */
+  /* perspective: 1000px; */
+}
+
+/* Adjust CTA buttons if needed */
+.ctaButton { /* Renamed from ctaButtonPrimary/Outline to a general class */
+  min-width: 200px;
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+  font-size: var(--font-size-base); /* Slightly smaller for this context */
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) { /* Tablet and below */
+  .heroContainer {
+    flex-direction: column;
+    text-align: center; /* Center text for stacked layout */
+    gap: var(--space-8);
+    padding-top: var(--space-12); /* Add padding when stacked */
+    padding-bottom: var(--space-12);
+  }
+
+  .textContent {
+    padding-right: 0;
+    align-items: center; /* Center text content items */
+    text-align: center;
+    flex-basis: auto; /* Allow content to determine height */
+  }
+  
+  .headline, .subheadline, .achievementText {
+    max-width: 680px; /* Allow more width when centered */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ctaContainer {
+    align-items: center; /* Center buttons when stacked */
+    flex-direction: column; /* Ensure they are stacked */
+  }
+  
+  .visualContent {
+    margin-top: var(--space-6);
+    max-width: 90%; /* Allow visual to be wider */
+    flex-basis: auto;
+  }
+
+  .dashboardPreviewPlaceholder {
+    max-width: 420px; /* Slightly smaller for stacked view */
+  }
+}
+
+@media (max-width: 768px) {
+   .heroSection {
+    min-height: 75vh;
+   }
+  .headline {
+    font-size: clamp(var(--font-size-xl), 7vw, var(--font-size-2xl));
+  }
+  .subheadline {
+    font-size: var(--font-size-base);
+  }
+   .statsText {
+    font-size: var(--font-size-base);
+  }
+  .ctaContainer {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  .ctaButton {
+    width: 100%;
+    max-width: 300px; /* Max width for buttons on mobile */
+  }
+}
+
+@media (min-width: 768px) { /* Ensure row direction for CTA on larger screens if needed */
+  .ctaContainer {
+    flex-direction: row; /* Buttons side-by-side */
+     gap: var(--space-5); /* Keep consistent gap */
+  }
+}
+
+/* Potential addition: Subtle entrance animation for the whole section */
+/* .heroSection {
+  animation: fadeIn 1s ease-out;
+} */
+
+/* Optional: A subtle pattern or gradient if desired */
+/*
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(var(--color-dark-blue-rgb),0.5) 0%, rgba(var(--color-black-rgb),0.8) 100%),
+              url('/path-to-subtle-pattern.svg'); // Example with gradient and pattern
+  background-blend-mode: multiply;
+  z-index: 0;
+  opacity: 0.5;
+}
+*/
+
+/* Example of a decorative element, could be animated later */
+/*
+.decorativeElement {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100px;
+  background-color: var(--color-accent-blue);
+  opacity: 0.1;
+  border-radius: 50%;
+  filter: blur(20px);
+  z-index: 0;
+}
+*/ 

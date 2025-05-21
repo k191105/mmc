@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+build
+
+# Ignore lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore specific configuration files if needed
+# .env.local 

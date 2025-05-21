@@ -1,0 +1,61 @@
+.card {
+  background-color: var(--background-card);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden; /* Ensures child elements conform to border radius */
+  transition: var(--transition-normal);
+  text-decoration: none; /* For when card is an anchor */
+  color: inherit; /* For when card is an anchor */
+  display: block; /* For when card is an anchor */
+}
+
+/* Variants */
+.default {}
+
+.interactive {
+  border-color: var(--color-steel-blue);
+}
+
+.interactive:hover {
+  border-color: var(--color-accent-blue);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg); /* Enhance shadow on hover for interactive cards */
+}
+
+.flat {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none !important; /* Override any shadow props */
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/* Padding Options */
+.padding-none {
+  padding: 0;
+}
+.padding-small {
+  padding: var(--space-3);
+}
+.padding-medium {
+  padding: var(--space-5);
+}
+.padding-large {
+  padding: var(--space-8);
+}
+
+/* Shadow Options (using CSS variables for consistency) */
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+.shadow-xl {
+  box-shadow: var(--shadow-xl);
+} 

@@ -1,0 +1,92 @@
+.ctaSection {
+  padding: var(--space-16) 0;
+  background-color: var(--background-secondary); /* A darker, distinct background */
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden; /* For decorative elements */
+}
+
+/* Example: A subtle gradient overlay or pattern */
+/*
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(var(--color-accent-blue-rgb, 99, 179, 237), 0.1), transparent 70%);
+  z-index: 0;
+}
+*/
+
+.ctaContainer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center; /* Center the contentWrapper */
+  align-items: center;
+}
+
+.contentWrapper {
+  max-width: 750px; /* Control width of text content */
+}
+
+.ctaHeadline {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
+  margin-bottom: var(--space-5);
+  color: var(--text-primary);
+}
+
+.ctaSubtext {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+  line-height: 1.7;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+@media (min-width: 600px) {
+  .buttonContainer {
+    flex-direction: row;
+  }
+}
+
+/* Example of decorative shapes */
+/*
+.decorativeShape {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: var(--color-accent-blue);
+  opacity: 0.05;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: morph 8s ease-in-out infinite alternate;
+}
+
+.decorativeShape:nth-child(1) {
+  top: -50px;
+  left: -50px;
+}
+
+.decorativeShape:nth-child(2) {
+  bottom: -50px;
+  right: -50px;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes morph {
+  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: rotate(0deg); }
+  100% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; transform: rotate(15deg); }
+}
+*/ 

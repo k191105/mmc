@@ -1,0 +1,102 @@
+.socialProofSection {
+  padding: var(--space-12) 0 var(--space-16); /* Vertical padding */
+  background-color: var(--background-secondary, var(--color-near-white)); /* Light background for contrast */
+  text-align: center;
+}
+
+.socialProofContainer {
+  max-width: var(--container-max-width, 1200px);
+  margin: 0 auto;
+}
+
+.introText {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary-dark, var(--color-gray-700)); /* Darker text on light bg */
+  margin-bottom: var(--space-10);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.logoGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-10) var(--space-8); /* Row and column gap */
+}
+
+.logoItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px; /* Fixed width for consistent gradient display */
+  height: 40px; /* Fixed height for consistent gradient display */
+  background-image: linear-gradient(135deg, var(--color-pastel-peach), var(--color-pastel-green));
+  border-radius: var(--border-radius-sm);
+  overflow: hidden; /* Ensure img doesn't overflow if it's larger */
+}
+
+.logoItem img {
+  max-width: 100%;
+  max-height: 100%; /* Allow image to fill the container */
+  object-fit: contain; /* Scales image down to fit, maintaining aspect ratio */
+  /* filter: grayscale(100%); */ /* Removed grayscale */
+  /* opacity: 0.7; */ /* Removed opacity */
+  transition: opacity var(--transition-fast) ease-in-out; /* Keep hover effect for loaded images */
+  background-color: transparent; /* Ensure img background doesn't hide parent gradient */
+}
+
+.logoItem img:hover {
+  /* filter: grayscale(0%); */ /* Removed grayscale hover if you want gradient to persist */
+  opacity: 0.85; /* Slight opacity change on hover for loaded image */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .introText {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-8);
+  }
+
+  .logoGrid {
+    gap: var(--space-8) var(--space-6);
+  }
+
+  .logoItem {
+    min-width: 100px; /* Retaining for grid responsiveness */
+    max-width: 130px; /* Retaining for grid responsiveness */
+    width: 100px; /* Adjust fixed width for responsiveness */
+    height: 35px; /* Adjust fixed height for responsiveness */
+  }
+
+  .logoItem img {
+    max-height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .socialProofSection {
+    padding: var(--space-10) 0 var(--space-12);
+  }
+
+  .introText {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-6);
+  }
+
+  .logoGrid {
+    gap: var(--space-6) var(--space-4);
+  }
+
+  .logoItem {
+    min-width: 80px; /* Retaining for grid responsiveness */
+    max-width: 110px; /* Retaining for grid responsiveness */
+    width: 80px; /* Adjust fixed width for responsiveness */
+    height: 30px; /* Adjust fixed height for responsiveness */
+  }
+  
+  .logoItem img {
+    max-height: 30px;
+  }
+} 

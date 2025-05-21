@@ -1,0 +1,80 @@
+.faqSection {
+  padding: var(--space-16) 0;
+  background-color: var(--color-background-light, var(--color-near-white)); /* Or a slightly different shade like near-white */
+}
+
+.faqContainer {
+  max-width: var(--container-medium-width, 800px); /* FAQs are often narrower */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary-dark, var(--color-dark-blue));
+  margin-bottom: var(--space-12);
+}
+
+.faqList {
+  text-align: left;
+  border-top: 1px solid var(--color-border-light, var(--color-gray-300));
+}
+
+.faqItem {
+  border-bottom: 1px solid var(--color-border-light, var(--color-gray-300));
+}
+
+.faqQuestionButton {
+  width: 100%;
+  padding: var(--space-5) 0; /* Only vertical padding on button for full width effect */
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary-dark, var(--color-dark-blue));
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color var(--transition-fast) ease-in-out;
+}
+
+.faqQuestionButton:hover,
+.faqQuestionButton[aria-expanded="true"] {
+  color: var(--color-accent-blue);
+}
+
+.faqIcon {
+  font-size: var(--font-size-md);
+  margin-left: var(--space-4);
+  transition: transform var(--transition-fast) ease-in-out;
+}
+
+.faqAnswer {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary-dark, var(--color-gray-700));
+  line-height: 1.7;
+  padding-bottom: var(--space-5);
+  overflow: hidden; /* For framer-motion animation */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .faqContainer {
+    max-width: var(--container-small-width, 600px);
+  }
+  .sectionTitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-10);
+  }
+  .faqQuestionButton {
+    font-size: var(--font-size-md-lg);
+    padding: var(--space-4) 0;
+  }
+  .faqAnswer {
+    font-size: var(--font-size-sm-md);
+    padding-bottom: var(--space-4);
+  }
+} 

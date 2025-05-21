@@ -1,0 +1,101 @@
+.inputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-muted-dark-blue); /* Slightly lighter than main bg for contrast */
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 0 2px rgba(var(--color-accent-blue-rgb, 99, 179, 237), 0.2); /* Use RGB for alpha */
+}
+
+.inputWrapper.hasError {
+  border-color: #E53E3E; /* A common error red */
+}
+
+.inputWrapper.hasError:focus-within {
+  box-shadow: 0 0 0 2px rgba(229, 62, 62, 0.2);
+}
+
+.input {
+  flex-grow: 1;
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--color-muted-dark-blue) inset !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  caret-color: var(--text-primary);
+}
+
+/* Icons */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.icon svg {
+  width: 1.25em; /* Slightly larger than text */
+  height: 1.25em;
+}
+
+.leftIcon {
+  padding-left: var(--space-3);
+}
+
+.rightIcon {
+  padding-right: var(--space-3);
+}
+
+/* Adjust input padding if icons are present */
+.hasLeftIcon .input {
+  padding-left: var(--space-2);
+}
+
+.hasRightIcon .input {
+  padding-right: var(--space-2);
+}
+
+.errorMessage {
+  font-size: var(--font-size-xs);
+  color: #FC8181; /* Lighter error red for text */
+  margin-top: var(--space-1);
+} 

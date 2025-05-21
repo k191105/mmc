@@ -1,0 +1,118 @@
+.testimonialSection {
+  padding: var(--space-16) 0;
+  background-color: var(--background-primary); /* Consistent with Services Showcase */
+  overflow: hidden; /* Prevent any visual glitches during transitions if added later */
+}
+
+.testimonialContainer {
+  /* Standard container width */
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.carouselWrapper {
+  max-width: 800px; /* Control max width of the testimonial content */
+  margin: 0 auto;
+  position: relative;
+}
+
+.testimonialCard {
+  background-color: var(--background-card); /* Or transparent if using flat variant on a colored section bg */
+  /* If Card component's `flat` variant doesn't remove border/bg, force here: */
+  /* background-color: transparent; */
+  /* border: none; */
+  text-align: center;
+  padding: var(--space-8) var(--space-6); /* Custom padding for testimonial card content */
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--space-5);
+  border: 3px solid var(--color-steel-blue);
+}
+
+.quote {
+  font-size: clamp(var(--font-size-lg), 2.5vw, var(--font-size-xl));
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+  position: relative;
+}
+
+.quote p::before,
+.quote p::after {
+  content: '\201C'; /* Left double quote */
+  font-family: 'Georgia', serif; /* Or a similar serif font for quotes */
+  font-size: 2.5em; /* Larger quote marks */
+  color: var(--text-accent);
+  position: absolute;
+  opacity: 0.6;
+}
+
+.quote p::before {
+  content: '\201C'; /* Left double quote */
+  top: -0.3em;
+  left: -0.5em;
+}
+
+.quote p::after {
+  content: '\201D'; /* Right double quote */
+  bottom: -0.5em;
+  right: -0.5em;
+}
+
+.caption {
+  margin-top: var(--space-4);
+}
+
+.author {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.company {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.carouselNavigation {
+  display: flex;
+  justify-content: center; /* Center buttons below card */
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.navButton {
+  /* Button component styles are applied. Specific overrides or additions here */
+  /* Example: make them round */
+  /* border-radius: 50%; */
+  /* padding: var(--space-2); */
+  /* width: 40px; */
+  /* height: 40px; */
+  border-color: var(--color-steel-blue);
+  color: var(--color-steel-blue);
+}
+
+.navButton:hover {
+  border-color: var(--text-accent);
+  color: var(--text-accent);
+  background-color: rgba(var(--color-accent-blue-rgb, 99, 179, 237), 0.1);
+} 

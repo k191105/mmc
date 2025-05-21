@@ -1,0 +1,130 @@
+.caseStudySection {
+  padding: var(--space-16) 0;
+  background-color: var(--background-secondary); /* Or a very subtle off-primary */
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.sectionSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto var(--space-4);
+  line-height: 1.6;
+}
+
+.caseStudiesGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+  .caseStudiesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint, ensure max 3 columns for readability */
+  .caseStudiesGrid {
+    grid-template-columns: repeat(3, 1fr);
+    /* If fewer than 3 items, they won't stretch excessively if using auto-fit. */
+    /* Consider using explicit 1, 2, or 3 column layouts based on item count if needed. */
+  }
+}
+
+.caseStudyCard {
+  /* Card component handles base styling. Specific overrides or additions here. */
+  /* padding: none on Card, so internal elements control spacing */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-card); /* Ensure card bg is distinct */
+}
+
+.cardImageWrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Common aspect ratio for preview images */
+  overflow: hidden;
+  background-image: linear-gradient(135deg, var(--color-pastel-peach), var(--color-pastel-green)); /* Gradient placeholder */
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.caseStudyCard:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Ensure content area fills space */
+}
+
+.caseStudyTitle {
+  font-size: var(--font-size-lg); /* Slightly smaller than service title */
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+  line-height: 1.4;
+}
+
+.caseStudySummary {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+  flex-grow: 1; /* Pushes tags and link down */
+}
+
+.tagsContainer {
+  margin-bottom: var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tag {
+  font-size: var(--font-size-xs);
+  background-color: var(--color-muted-dark-blue);
+  color: var(--text-accent);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--border-radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.readMoreLink {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-accent);
+  text-decoration: none;
+  margin-top: auto; /* Pushes to bottom if summary is short */
+  transition: color var(--transition-fast);
+  align-self: flex-start; /* Align to the start of the flex container */
+}
+
+.caseStudyCard:hover .readMoreLink {
+  color: var(--text-accent-hover);
+  text-decoration: underline;
+}
+
+.viewAllCaseStudiesCta {
+  text-align: center;
+  margin-top: var(--space-12);
+} 

@@ -1,0 +1,9 @@
+/* Styles specific to the HomePage (src/app/page.tsx) */
+
+.homePage {
+  /* 
+    Currently no specific styles needed as Hero section handles its own layout.
+    This file is here if we need to add page-level layout adjustments later,
+    for example, managing the flow or spacing between multiple sections.
+  */
+} 

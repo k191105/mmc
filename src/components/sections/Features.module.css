@@ -1,0 +1,83 @@
+.featuresSection {
+  padding: var(--space-16) 0;
+  background-color: var(--color-background-default, var(--color-white));
+  text-align: center;
+}
+
+.featuresContainer {
+  max-width: var(--container-max-width, 1200px);
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary-dark, var(--color-dark-blue));
+  margin-bottom: var(--space-12);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-8);
+}
+
+.featureItem {
+  background-color: var(--color-background-light, var(--color-near-white));
+  padding: var(--space-8);
+  border-radius: var(--border-radius-lg);
+  text-align: left; /* Align content within the card to the left */
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base) ease-in-out, box-shadow var(--transition-base) ease-in-out;
+}
+
+.featureItem:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.featureIcon {
+  margin-bottom: var(--space-4);
+  display: flex;
+  justify-content: flex-start; /* Align icon to the left */
+}
+
+.iconPlaceholder {
+  width: 50px;
+  height: 50px;
+  background-image: linear-gradient(135deg, var(--color-pastel-peach), var(--color-pastel-green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-md);
+}
+
+.featureTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary-dark, var(--color-dark-blue));
+  margin-bottom: var(--space-3);
+}
+
+.featureDescription {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary-dark, var(--color-gray-700));
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-10);
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr; /* Stack items on smaller screens */
+    gap: var(--space-6);
+  }
+
+  .featureItem {
+    padding: var(--space-6);
+  }
+} 
