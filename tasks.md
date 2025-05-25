@@ -120,10 +120,6 @@ This document outlines a granular implementation plan for building the MVP of Th
 - **Action**: Create app/services/[slug]/page.tsx with dynamic content
 - **Done when**: Individual service pages render based on URL parameter
 
-### 23. Create Service Comparison Component
-- **Task**: Build interactive service comparison tool
-- **Action**: Create components/features/ServiceComparison.tsx
-- **Done when**: Users can select and compare different services side by side
 
 ## Phase 5: Case Studies Section
 

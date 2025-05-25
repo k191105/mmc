@@ -1,0 +1,165 @@
+.detailPageContainer {
+  padding: 4rem 2rem;
+  background-color: var(--color-background-primary);
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: calc(100vh - var(--navbar-height, 80px)); /* Adjust if you have a fixed navbar */
+}
+
+.serviceHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.serviceIconHeader {
+  font-size: 4rem; /* Larger icon for detail page */
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.serviceTitleHeader {
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+.serviceContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.descriptionSection h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.descriptionSection p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  white-space: pre-line; /* Preserves line breaks from the description string */
+}
+
+.keyBenefitsSection {
+  background-color: var(--color-background-secondary);
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.keyBenefitsSection h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.keyBenefitsSection ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+.keyBenefitsSection li {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.75rem;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.keyBenefitsSection li::before {
+  content: '✓'; /* Checkmark icon */
+  color: var(--color-success);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.ctaButton {
+  width: 100%;
+  margin-bottom: 1rem !important; /* Ensure spacing between buttons */
+}
+
+.ctaButton:last-child {
+  margin-bottom: 0 !important;
+}
+
+.backLinkWrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.notFoundContainer {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.notFoundContainer h1 {
+  font-size: 2.5rem;
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+}
+
+.notFoundContainer p {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .detailPageContainer {
+    padding: 3rem 1.5rem;
+  }
+
+  .serviceContent {
+    grid-template-columns: 1fr; /* Stack content and sidebar */
+    gap: 2rem;
+  }
+
+  .keyBenefitsSection {
+    padding: 1.5rem;
+    margin-top: 2rem; /* Add some space when stacked */
+  }
+
+  .descriptionSection h2 {
+    font-size: 1.6rem;
+  }
+
+  .descriptionSection p {
+    font-size: 1rem;
+  }
+
+  .keyBenefitsSection h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .detailPageContainer {
+    padding: 2rem 1rem;
+  }
+
+  .serviceHeader {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .serviceIconHeader {
+    font-size: 3rem;
+  }
+
+  .serviceTitleHeader {
+    font-size: 2rem;
+  }
+} 

@@ -1,0 +1,180 @@
+.caseStudiesPageContainer {
+  padding: 4rem 2rem;
+  background-color: var(--color-background-primary); /* Slightly different background */
+  min-height: calc(100vh - var(--navbar-height, 80px));
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 4rem; /* More spacing for a spacious feel */
+}
+
+.pageHeader h1 {
+  font-size: clamp(2.8rem, 5.5vw, 3.8rem);
+  color: var(--color-text-primary);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.pageHeader p {
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  color: var(--color-text-secondary);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.caseStudiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.caseStudyCardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: var(--border-radius-xl); /* Softer radius for the link hover effect */
+}
+
+.caseStudyCardLink:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl); /* More pronounced shadow on hover */
+}
+
+.caseStudyCard {
+  background-color: var(--color-background-card);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden; /* To contain image within card radius */
+  box-shadow: var(--shadow-md);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardImageWrapper {
+  width: 100%;
+  padding-top: 60%; /* Aspect ratio for image (e.g., 5:3). Adjust as needed. */
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.caseStudyCardLink:hover .cardImage {
+  transform: scale(1.05); /* Subtle zoom on image hover */
+}
+
+.cardContent {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.caseStudyTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.caseStudySummary {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.cardMeta {
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column; /* Stack client and service */
+  gap: 0.25rem;
+}
+
+.tagsContainer {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: var(--color-primary-muted);
+  color: var(--color-primary);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.readMoreLink {
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  align-self: flex-start; /* Align to the left */
+  padding: 0.5rem 0; /* Add some padding for easier click */
+  transition: color 0.2s ease;
+}
+
+.caseStudyCardLink:hover .readMoreLink {
+  color: var(--color-accent); 
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .caseStudiesPageContainer {
+    padding: 3rem 1.5rem;
+  }
+  .pageHeader h1 {
+    font-size: 2.5rem;
+  }
+  .pageHeader p {
+    font-size: 1.1rem;
+  }
+  .caseStudiesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .caseStudyTitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .caseStudiesPageContainer {
+    padding: 2rem 1rem;
+  }
+  .pageHeader h1 {
+    font-size: 2.2rem;
+  }
+  .pageHeader p {
+    font-size: 1rem;
+  }
+  .caseStudiesGrid {
+    grid-template-columns: 1fr; /* Stack cards */
+    gap: 1.5rem;
+  }
+  .cardContent {
+    padding: 1.5rem;
+  }
+  .caseStudyTitle {
+    font-size: 1.25rem;
+  }
+} 

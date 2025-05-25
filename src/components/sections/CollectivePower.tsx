@@ -44,7 +44,7 @@ const CollectivePower = () => {
               <p className={styles.tierText}>Hands-on specialists configuring and optimizing marketing technology, data platforms, and automation.</p>
             </div>
             <div className={styles.ctaWrapper}>
-                <Button href="#contact" variant="primary" size="medium"> {/* Assuming #contact section exists or will be created */} 
+                <Button href="/approach" variant="primary" size="medium"> 
                     See How It Works
                 </Button>
             </div>

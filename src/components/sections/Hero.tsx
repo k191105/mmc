@@ -67,8 +67,8 @@ const Hero = () => {
             className={styles.ctaContainer}
             variants={itemVariants}
           >
-            <Button href="#strategy-session" variant="primary" size="large" className={styles.ctaButton}>
-              Book a Strategy Session
+            <Button href="/contact" variant="primary" size="large" className={styles.ctaButton}>
+              Book a Free Strategy Session
             </Button>
             <Button href="/case-studies" variant="outline" size="large" className={styles.ctaButton}>
               See Our Case Studies

@@ -1,0 +1,140 @@
+.servicesPageContainer {
+  padding: 4rem 2rem;
+  background-color: var(--color-background-secondary);
+  min-height: calc(100vh - var(--navbar-height, 80px)); /* Adjust if you have a fixed navbar */
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pageHeader h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.pageHeader p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.servicesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.serviceCardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%; /* Ensure cards in the same row have same height potential */
+}
+
+.serviceCard {
+  background-color: var(--color-background-card);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-md);
+  height: 100%; /* Make card take full height of its container */
+  display: flex;
+  flex-direction: column;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.serviceIconWrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.serviceIcon {
+  font-size: 3rem; /* Adjust as needed */
+  color: var(--color-primary);
+  /* For SVG icons, you might use: 
+  width: 50px;
+  height: 50px;
+  fill: var(--color-primary);
+  */
+}
+
+.serviceTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.serviceDescription {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Allows description to take available space */
+  text-align: center;
+}
+
+.learnMoreLink {
+  display: inline-block;
+  margin-top: auto; /* Pushes to the bottom if card content is short */
+  font-weight: 500;
+  color: var(--color-primary);
+  text-align: center;
+  width: 100%;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .servicesPageContainer {
+    padding: 3rem 1.5rem;
+  }
+
+  .pageHeader h1 {
+    font-size: 2.2rem;
+  }
+
+  .pageHeader p {
+    font-size: 1rem;
+  }
+
+  .serviceCard {
+    padding: 1.5rem;
+  }
+
+  .serviceTitle {
+    font-size: 1.3rem;
+  }
+
+  .serviceDescription {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .servicesPageContainer {
+    padding: 2rem 1rem;
+  }
+
+  .pageHeader h1 {
+    font-size: 2rem;
+  }
+  .servicesList {
+    grid-template-columns: 1fr; /* Stack cards on very small screens */
+  }
+} 
